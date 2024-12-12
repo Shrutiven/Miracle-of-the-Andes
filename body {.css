@@ -1,0 +1,139 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('https://cdn.pixabay.com/photo/2016/01/26/17/29/aircraft-1162929_960_720.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+    text-align: left;
+    position: relative; /* Ensure the body can act as a reference for ::before */
+}
+
+/* Overlay for Readability */
+body::before {
+    content: '';
+    position: fixed; /* Ensures overlay spans the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+body * {
+    position: relative;
+    z-index: 2; /* Ensure the content is above the overlay */
+}
+
+/* Other styles remain unchanged */
+.container {
+    position: relative;
+    text-align: center;
+}
+
+/* Title Styling */
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border: 2px solid black;
+    text-shadow: 1px 1px white;
+}
+.title:hover {
+            color: red; 
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease-in-out;
+    transform: translate(-50%, -60%); /* Moves the title slightly up when hovered */
+}
+/* Other elements styled as per your existing CSS */
+.image-container {
+    position: relative;
+    display: block; /* Ensure it's a block element */
+    width: 80%; /* Responsive width */
+    max-width: 800px; /* Optional: Limit the maximum width */
+    margin: auto; /* Center horizontally */
+    overflow: hidden; /* Ensure the image doesn't overflow on zoom */
+}
+
+/* Image Styling */
+.image-container img {
+    width: 100%; /* Fill container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below the image */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth zoom transition */
+}
+
+/* Hover Effect for Zoom */
+.image-container img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    opacity: 1; /* Full opacity */
+}
+
+h1, h2, h3, h4 {
+    color: black;
+    margin: 20px auto; /* Centering the headers by using auto for horizontal margins */
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+    text-align: center; /* Center align the text */
+    width: fit-content; /* Adjusts the width of the header to the content */}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+
+p {
+    margin: 20px 2em;
+    font-size: 1rem;
+    text-align: justify;
+}
+/* Clearfix for Floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center content */
+    justify-content: center; /* Vertically center content */
+    text-align: center; /* Ensure text is centered */
+    background: #f0f0f0;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #ccc;
+    width: 100%; /* Ensure footer takes full width */
+}
+
+.content {
+    flex: 1; /* This ensures the content area takes up all available space */
+}
+
+.footer .details {
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.footer .details a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.footer .details a:hover {
+    text-decoration: underline;
+}
+
